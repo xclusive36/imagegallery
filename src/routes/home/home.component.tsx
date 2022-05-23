@@ -1,11 +1,7 @@
-import "./home.styles.scss";
+import SearchPhotos from "../../components/searchPhotos/searchPhotos.component";
 
 const Home = () => {
-    return (
-        <div className="home-component">
-            <div>I am the Home Component</div>
-        </div>
-    );
+    return <SearchPhotos />;
 };
 
 export default Home;

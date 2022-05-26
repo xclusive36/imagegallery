@@ -1,5 +1,4 @@
 import { signOut } from "firebase/auth";
-import { Fragment } from "react";
 import { Link, Outlet } from "react-router-dom";
 
 import { ReactComponent as Logo } from "../../assets/fishing-svgrepo-com.svg";
@@ -20,46 +19,43 @@ const Navigation = () => {
     };
 
     if (user) {
-        signOption = (<Link className="nav-link" to="/login">
-        <div
-            className="header__option"
-            onClick={handleAuthentication}
-        >
-            Sign Out
-        </div>
-    </Link>);
+        signOption = (
+            <>
+                <Link className="myButton" to="/user">
+                    My Account
+                </Link>
+                <Link
+                    onClick={handleAuthentication}
+                    className="myButton"
+                    to="/login"
+                >
+                    Sign Out
+                </Link>
+            </>
+        );
     } else {
-        signOption = (<Link className="nav-link" to="/login">
-        <div
-            className="header__option"
-        >
-            Sign In
-        </div>
-    </Link>);
+        signOption = (
+            <Link className="myButton" to="/login">
+                Sign In
+            </Link>
+        );
     }
 
     return (
-        <Fragment>
+        <>
             <div className="navigation">
-                <Link className="logo-container" to="/">
-                    <Logo className="logo" />
-                </Link>
-                <h1 className="title">Image Gallery</h1>
                 <div className="nav-links-container">
-                    <Link className="nav-link" to="/">
+                    <Link className="myButton" to="/">
                         Home
                     </Link>
-                    <Link className="nav-link" to="/about">
+                    <Link className="myButton" to="/about">
                         About
-                    </Link>
-                    <Link className="nav-link" to="/user">
-                        My Account
                     </Link>
                     {signOption}
                 </div>
             </div>
             <Outlet />
-        </Fragment>
+        </>
     );
 };
 

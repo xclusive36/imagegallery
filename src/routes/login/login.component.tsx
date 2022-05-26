@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { auth } from "../../firebase/firebase.utils";
 import {
@@ -37,7 +37,6 @@ function Login() {
 
     return (
         <div className="login">
-
             <div className="login__container">
                 <h1>Sign-in</h1>
 
@@ -66,7 +65,8 @@ function Login() {
                 </form>
 
                 <p>
-                    By signing-in you agree to our Terms of Use, and our Privacy Policy.
+                    By signing-in you agree to our Terms of Use, and our Privacy
+                    Policy.
                 </p>
 
                 <button className="login__registerButton" onClick={register}>

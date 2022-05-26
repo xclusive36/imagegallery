@@ -1,3 +1,8 @@
+# Simple wallpaper image search web app.
+
+This web app was created with create-react-app utilizes unsplash.com's web api and firebase back end for user authorizion.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
